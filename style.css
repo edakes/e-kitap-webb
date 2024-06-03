@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+
+
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --black: #1c2a39;
+  --gray: #5c6a79;
+  --purple: #4c3db2;
+}
+
+.navbar{
+  height: 120px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.menu, .menu__icons{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.menu li, .menu__icons li{
+  margin: 0 10px;
+  color: var(--black);
+}
+.menu .active{
+  color: var(--black);
+  font-weight: bold;
+}
+
+.basket__count{
+  width: 20px;
+  height: 20px;
+  background-color: var(--black);
+  border-radius: 50%;
+  color: #ffffff;
+  position: absolute;
+  right: -0.7rem;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold;
+
+}
+
+.basket__icon{
+  position: relative;
+}
+
+.basket__count:empty{
+  display: none;
+}
+/* slider orta kısım */
+
+.slider{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+}
+.slider img{
+  height: 600px;
+}
+
+/* store bölümü kitaplar */
+
+.store{
+  width: 80%;
+  margin-left: 10%;
+  
+  
+}
+
+.book__card{
+  height: 400px;
+
+}
+
+.book__card img{
+  height: 400px;
+}
+
+.fos{
+  font-family: "Open Sans", sans-serif;
+}
+.gray{
+  color: var(--gray);
+}
+.black{
+  color: var(--black);
+}
+.fw-bold{
+  font-weight: bold;
+}
+
+
+.book__star-rate .bi-star-fill,.bi-star{
+color: #eeedf5;
+font-size: 1.2rem;
+margin-right: 5px;
+
+}
+
+
+.book__star-rate .bi-star-fill.active{
+  color: #f2c94c;
+ }
+
+.book__description{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.btn__purple{
+cursor: pointer;
+border: 2px solid var(--purple);
+color: var(--purple);
+font-size: 1rem;
+font-weight: bold;
+background-color: transparent;
+border-radius: 4px;
+display: flex;
+}
+
+.btn__purple:hover{
+background-color: var(--purple);
+color: white;
+}
+
+.old__price{
+  color: #bdbdbd;
+  text-decoration: line-through;
+}
+
+.col-5.offset-2, .col-5 {
+  margin-bottom: 50px;
+}
+
+
+/* filter kısmı kitaplar */
+
+.filter__background{
+  background-color: #efeef6;
+  width: 400px;
+  height: 600px;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.filter{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 650px;
+  justify-content: center;
+position: absolute;
+}
+
+.filter li{
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.filter li:hover{
+  color: rgb(1, 1, 123);
+}
+
+.filter li.active{
+color: var(--purple);
+font-size: 1.5rem;
+font-weight: bold;
+
+}
+
+filter li.active::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  display: inline-block;
+  position:absolute;
+  left: -10px;
+  margin-top: 12px;
+}
