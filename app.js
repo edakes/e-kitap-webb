@@ -113,6 +113,13 @@ const addBookToBasket = (bookId) => {
         { quantity: basketList[basketItemIndex].quantity + 1 }
       );
     }
+    
+    //sepete ekle butonunda eklenen kadar saydırma
+      const basketCountElement = document.querySelector('.basket__count');
+      const basketListLength = basketList.length;
+    
+      basketCountElement.textContent = basketListLength;
+    
 
     console.log(basketList);
   }
