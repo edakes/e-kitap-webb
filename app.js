@@ -77,23 +77,45 @@ const BOOK_TYPES ={
 };
 
 
-let basketIndex = 0;
-const addBookToBasket = (bookId) => {
-     
-      let findedBook = bookList.find((book) => book.id == bookId);
-      if(findedBook){
-        const basketAlreadyIndex = basketIndex.findIndex((basket) => basket.product.id == bookId);
-        if(basketAlreadyIndex== -1){ 
 
-        let addedItem =  {quantity : 1, product: findedBook };
-        basketList.push();
-      }else{
-        basketList[basketAlreadyIndex].quantity+=1;
-      }
+// const addBookToBasket = (bookId) => {
+//       const basketIndex = [];
+     
+//       let findedBook = bookList.find((book) => book.id == bookId);
+//       if(findedBook){
+//         const basketAlreadyIndex = basketIndex.findIndex((basket) => basket.product.id == bookId);
+//         if(basketAlreadyIndex== -1){ 
+
+//         let addedItem =  {quantity : 1, product: findedBook };
+//         basketList.push();
+//       }else{
+//         basketList[basketAlreadyIndex].quantity+=1;
+//       }
        
-      // console.log(basketList);
-    }
+//      console.log(basketList);
+//     }
       
+// };
+
+const addBookToBasket = (bookId) => {
+  let findedBook = bookList.find((book) => book.id === bookId);
+  if (findedBook) {
+    const basketItemIndex = basketList.findIndex(
+      (basketItem) => basketItem.product.id === bookId
+    );
+
+    if (basketItemIndex === -1) {
+      basketList.push({ quantity: 1, product: findedBook });
+    } else {
+      basketList[basketItemIndex] = Object.assign(
+        {},
+        basketList[basketItemIndex],
+        { quantity: basketList[basketItemIndex].quantity + 1 }
+      );
+    }
+
+    console.log(basketList);
+  }
 };
 
 const filterBooks= (filterEl) =>{
